@@ -1,2 +1,2 @@
 # myWalletControl
-Multiplatform application for managing funds. Income and outcome control.
+Multiplatform application for managing funds. Simple income and outcome control.
