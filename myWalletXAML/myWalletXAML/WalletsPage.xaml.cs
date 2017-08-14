@@ -18,7 +18,7 @@ namespace myWalletXAML
         public WalletsPage ()
         {
             InitializeComponent();
-            //App.Current.Properties.Clear();
+            App.Current.Properties.Clear();
 
             if (App.Current.Properties.ContainsKey("Number of wallets"))
             {
@@ -30,7 +30,7 @@ namespace myWalletXAML
                 {
                     for (int i = 1; i <= WalletsValue; i++)
                     {
-                        while (!newWalletButton(App.Current.Properties[$"Wallet {i}"].ToString()))
+                        while (!NewWalletButton(App.Current.Properties[$"Wallet {i}"].ToString()))
                         {
 
                         }
@@ -47,7 +47,7 @@ namespace myWalletXAML
 
         }
 
-        async void OnEntryWalletNameTextChanged(object sender, TextChangedEventArgs e)
+        void OnEntryWalletNameTextChanged(object sender, TextChangedEventArgs e)
         {
             if (entryWalletName.Text != null)
             {
@@ -55,13 +55,13 @@ namespace myWalletXAML
             }
         }
 
-        async void onNewWalletButtonClicked(object sender, EventArgs e)
+        async void OnNewWalletButtonClicked(object sender, EventArgs e)
         {
             if (!wallets.Contains(entryWalletName.Text))
             {
                 ++WalletsValue;
-                newWalletButton(entryWalletName.Text);
-                DisplayAlert($"Wallet {WalletsValue}", entryWalletName.Text, "OK");
+                NewWalletButton(entryWalletName.Text);
+                await DisplayAlert($"Wallet {WalletsValue}", entryWalletName.Text, "OK");
                 App.Current.Properties.Add($"Wallet {WalletsValue}", entryWalletName.Text);
                 App.Current.Properties["Number of wallets"] = WalletsValue;
                 await App.Current.SavePropertiesAsync();
@@ -73,7 +73,7 @@ namespace myWalletXAML
             
         }
 
-        bool newWalletButton(string walletName)
+        bool NewWalletButton(string walletName)
         {
             var button = new Button
             {
@@ -81,14 +81,14 @@ namespace myWalletXAML
                 ClassId = $"Wallet {WalletsValue}",
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
-            button.Clicked += onOpenWalletButtonClicked;
+            button.Clicked += OnOpenWalletButtonClicked;
             walletsStack.Children.Add(button);
             wallets.Add(walletName);
             return true;
         }
 
 
-        async void onOpenWalletButtonClicked(object sender, EventArgs e)
+        async void OnOpenWalletButtonClicked(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             if(btn.ClassId == "Wallet 1")

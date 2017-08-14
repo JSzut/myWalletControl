@@ -20,10 +20,11 @@
       <DependentUpon>newWalletListPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)test.xaml.cs">
-      <DependentUpon>test.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)WalletsListPage.xaml.cs">
+      <DependentUpon>WalletsListPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)WalletsModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WalletsPage.xaml.cs">
       <DependentUpon>WalletsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -34,10 +35,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)newWalletPage.xaml.cs">
-      <DependentUpon>newWalletPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -67,12 +64,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)newWalletPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -85,7 +76,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)test.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)WalletsListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

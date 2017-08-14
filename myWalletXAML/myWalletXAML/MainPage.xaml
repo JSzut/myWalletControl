@@ -11,7 +11,7 @@
     
     <NavigationPage Title="myWallets">
         <x:Arguments>
-            <local:WalletsPage />
+            <local:WalletsListPage />
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="Settings">

@@ -57,6 +57,6 @@
                 <x:String>Expanse</x:String>
             </Picker.Items>
         </Picker>
-        <Button Text = "+" Clicked="onAddButtonClicked" FontSize="Large" Opacity="0.5" BackgroundColor = "Blue" Grid.Row="2" Grid.Column = "3"/>
+        <Button Text = "+" Clicked="OnAddButtonClicked" FontSize="Large" Opacity="0.5" BackgroundColor = "Blue" Grid.Row="2" Grid.Column = "3"/>
     </Grid>
 </ContentPage>

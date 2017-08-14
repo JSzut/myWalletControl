@@ -14,15 +14,19 @@ namespace myWalletXAML {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class test : global::Xamarin.Forms.ContentPage {
+    public partial class WalletsListPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.ListView lstView;
+        private global::Xamarin.Forms.ListView lsWallets;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry entryName;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(test));
-            lstView = this.FindByName<global::Xamarin.Forms.ListView>("lstView");
+            this.LoadFromXaml(typeof(WalletsListPage));
+            lsWallets = this.FindByName<global::Xamarin.Forms.ListView>("lsWallets");
+            entryName = this.FindByName<global::Xamarin.Forms.Entry>("entryName");
         }
     }
 }

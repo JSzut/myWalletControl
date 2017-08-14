@@ -6,6 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Settings go here" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Button Clicked="OnDataDeleteButtonClicked" Text="Delete data" BackgroundColor="Red" TextColor="White" FontSize="Large" VerticalOptions="Fill"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

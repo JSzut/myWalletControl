@@ -30,7 +30,7 @@ namespace myWalletXAML
             Items = new ObservableCollection<MoneyModel>();
             
             BindingContext = this;
-            //App.Current.Properties.Clear();
+            
             if (App.Current.Properties.ContainsKey($"{walletID} Number of items"))
             {
                 string tempItems;
@@ -68,7 +68,7 @@ namespace myWalletXAML
             lstEntries.ItemsSource = Items;
         }
 
-        async void onAddButtonClicked(object sender, EventArgs e)
+        async void OnAddButtonClicked(object sender, EventArgs e)
         {
             if (entryName.Text != null && entryValue.Text != null && picker.SelectedIndex != -1)
             {

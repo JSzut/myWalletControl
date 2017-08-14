@@ -8,7 +8,7 @@
             <StackLayout x:Name="walletsStack">
                 <Label Text="Wallets go here" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
                 <Entry x:Name="entryWalletName" TextChanged="OnEntryWalletNameTextChanged" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand"/>
-                <Button x:Name="btnNewWallet" Text="New Wallet" Clicked="onNewWalletButtonClicked" VerticalOptions="CenterAndExpand" IsEnabled="False"/>
+                <Button x:Name="btnNewWallet" Text="New Wallet" Clicked="OnNewWalletButtonClicked" VerticalOptions="CenterAndExpand" IsEnabled="False"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

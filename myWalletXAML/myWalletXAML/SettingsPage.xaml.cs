@@ -16,5 +16,10 @@ namespace myWalletXAML
 		{
 			InitializeComponent ();
 		}
-	}
+
+        async void OnDataDeleteButtonClicked(object sender, EventArgs e)
+        {
+            App.Current.Properties.Clear();
+        }
+    }
 }

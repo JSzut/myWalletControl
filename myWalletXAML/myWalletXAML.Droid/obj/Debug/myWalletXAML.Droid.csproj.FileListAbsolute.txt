@@ -41,6 +41,5 @@ C:\Users\Jakub Szut\Documents\Repos\myWalletControl\myWalletXAML\myWalletXAML.Dr
 C:\Users\Jakub Szut\Documents\Repos\myWalletControl\myWalletXAML\myWalletXAML.Droid\obj\Debug\myWalletXAML.Droid.SettingsPage.xaml.g.cs
 C:\Users\Jakub Szut\Documents\Repos\myWalletControl\myWalletXAML\myWalletXAML.Droid\obj\Debug\myWalletXAML.Droid.ProfilePage.xaml.g.cs
 C:\Users\Jakub Szut\Documents\Repos\myWalletControl\myWalletXAML\myWalletXAML.Droid\obj\Debug\myWalletXAML.Droid.WalletsPage.xaml.g.cs
-C:\Users\Jakub Szut\Documents\Repos\myWalletControl\myWalletXAML\myWalletXAML.Droid\obj\Debug\myWalletXAML.Droid.newWalletPage.xaml.g.cs
 C:\Users\Jakub Szut\Documents\Repos\myWalletControl\myWalletXAML\myWalletXAML.Droid\obj\Debug\myWalletXAML.Droid.newWalletListPage.xaml.g.cs
-C:\Users\Jakub Szut\Documents\Repos\myWalletControl\myWalletXAML\myWalletXAML.Droid\obj\Debug\myWalletXAML.Droid.test.xaml.g.cs
+C:\Users\Jakub Szut\Documents\Repos\myWalletControl\myWalletXAML\myWalletXAML.Droid\obj\Debug\myWalletXAML.Droid.WalletsListPage.xaml.g.cs
