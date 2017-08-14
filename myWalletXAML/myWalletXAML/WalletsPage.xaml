@@ -4,9 +4,12 @@
              x:Class="myWalletXAML.WalletsPage"
              Title="myWallets">
     <ContentPage.Content>
-        <StackLayout x:Name="walletsStack">
-            <Label Text="Wallets go here" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-            <Button Text="New Wallet" Clicked="onNewWalletButtonClicked" VerticalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout x:Name="walletsStack">
+                <Label Text="Wallets go here" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                <Entry x:Name="entryWalletName" TextChanged="OnEntryWalletNameTextChanged" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand"/>
+                <Button x:Name="btnNewWallet" Text="New Wallet" Clicked="onNewWalletButtonClicked" VerticalOptions="CenterAndExpand" IsEnabled="False"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

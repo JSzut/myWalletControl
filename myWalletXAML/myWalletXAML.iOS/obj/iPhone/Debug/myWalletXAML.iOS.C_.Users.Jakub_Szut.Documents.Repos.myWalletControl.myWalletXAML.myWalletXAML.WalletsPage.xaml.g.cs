@@ -20,9 +20,17 @@ namespace myWalletXAML {
         private global::Xamarin.Forms.StackLayout walletsStack;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry entryWalletName;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button btnNewWallet;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(WalletsPage));
             walletsStack = this.FindByName<global::Xamarin.Forms.StackLayout>("walletsStack");
+            entryWalletName = this.FindByName<global::Xamarin.Forms.Entry>("entryWalletName");
+            btnNewWallet = this.FindByName<global::Xamarin.Forms.Button>("btnNewWallet");
         }
     }
 }

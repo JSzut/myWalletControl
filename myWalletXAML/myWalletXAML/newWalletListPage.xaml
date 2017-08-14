@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="myWalletXAML.newWalletListPage">
+    
+
+        <!--Built in Cells-->
+    <!--<ListView.ItemTemplate>
+      <DataTemplate>
+        <TextCell />
+      </DataTemplate>
+    </ListView.ItemTemplate>-->
+    
+    <!--Custom View Cells-->
+    <Grid VerticalOptions = "FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblSum" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
+        <ListView x:Name="lstEntries" ItemTapped="Handle_ItemTapped" Grid.Row = "1" Grid.Column = "0" Grid.RowSpan = "2" Grid.ColumnSpan = "4" VerticalOptions="Fill" HorizontalOptions="Fill">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!--<StackLayout>-->
+                        <Grid VerticalOptions="Fill" HorizontalOptions="Fill"  BackgroundColor="{Binding wColor}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Value}" HorizontalOptions="Center" VerticalOptions="Fill" FontSize="Large" Grid.Column="0"/>
+                            <Label Text="{Binding Name}"  HorizontalTextAlignment="Start" VerticalOptions="Fill" FontSize="Large" Grid.Column="1"/>
+                            <Label Text="{Binding wType}" HorizontalTextAlignment="End" VerticalOptions="Fill" FontSize="Large" Grid.Column="2"/>
+                        </Grid>
+                        <ViewCell.ContextActions>
+                            <MenuItem Clicked="OnMore" Text="More" CommandParameter="{Binding ID}" />
+                            <MenuItem Clicked="OnDelete" Text="Delete" IsDestructive="true" CommandParameter="{Binding ID}" />
+                        </ViewCell.ContextActions>
+                        <!--</StackLayout>-->
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry x:Name="entryValue" Keyboard="Numeric" Grid.Row="2" Grid.Column="0"/>
+        <Entry x:Name="entryName" Grid.Row="2" Grid.Column="1"/>
+        <Picker x:Name="picker" Title="Type" Grid.Row="2" Grid.Column="2">
+            <Picker.Items>
+                <x:String>Income</x:String>
+                <x:String>Expanse</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button Text = "+" Clicked="onAddButtonClicked" FontSize="Large" Opacity="0.5" BackgroundColor = "Blue" Grid.Row="2" Grid.Column = "3"/>
+    </Grid>
+</ContentPage>

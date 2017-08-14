@@ -14,30 +14,30 @@ namespace myWalletXAML {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class newWalletPage : global::Xamarin.Forms.ContentPage {
+    public partial class newWalletListPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.StackLayout scrollWallet;
+        private global::Xamarin.Forms.Label lblSum;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label lblTotalMoney;
+        private global::Xamarin.Forms.ListView lstEntries;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Entry entryPurpose;
+        private global::Xamarin.Forms.Entry entryValue;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Entry entryAmount;
+        private global::Xamarin.Forms.Entry entryName;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Picker picker;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(newWalletPage));
-            scrollWallet = this.FindByName<global::Xamarin.Forms.StackLayout>("scrollWallet");
-            lblTotalMoney = this.FindByName<global::Xamarin.Forms.Label>("lblTotalMoney");
-            entryPurpose = this.FindByName<global::Xamarin.Forms.Entry>("entryPurpose");
-            entryAmount = this.FindByName<global::Xamarin.Forms.Entry>("entryAmount");
+            this.LoadFromXaml(typeof(newWalletListPage));
+            lblSum = this.FindByName<global::Xamarin.Forms.Label>("lblSum");
+            lstEntries = this.FindByName<global::Xamarin.Forms.ListView>("lstEntries");
+            entryValue = this.FindByName<global::Xamarin.Forms.Entry>("entryValue");
+            entryName = this.FindByName<global::Xamarin.Forms.Entry>("entryName");
             picker = this.FindByName<global::Xamarin.Forms.Picker>("picker");
         }
     }
