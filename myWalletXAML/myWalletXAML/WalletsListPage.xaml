@@ -22,7 +22,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Button Clicked="OnWalletOpenClicked" Text="{Binding Name}" VerticalOptions="Fill" FontSize="Large" Grid.Column="0"/>
-                            <!--<Button Clicked="OnDelete" Text="-" CommandParameter="{Binding ID}" FontSize="Large" VerticalOptions="Fill" Grid.Column="1"/>-->
+                            <Button Clicked="OnDelete" Text="-" CommandParameter="{Binding Name}" FontSize="Large" VerticalOptions="Fill" Grid.Column="1"/>
                         </Grid>
                         <!--</StackLayout>-->
                     </ViewCell>

@@ -69,7 +69,14 @@ namespace myWalletXAML
 
         bool NewWallet(int id, string name)
         {
-            WalletsItems.Add(new WalletsModel { ID = id, Name = name});
+            if(WalletsItems.Count > 0)
+            {
+                WalletsItems.Add(new WalletsModel { ID = WalletsItems.Count + 1, Name = name });
+            }
+            else
+            {
+                WalletsItems.Add(new WalletsModel { ID = 1, Name = name });
+            }
             return true;
         }
 
@@ -89,7 +96,7 @@ namespace myWalletXAML
                 }
             }
 
-            if (!walletExists)
+            if (!walletExists && entryName.Text != null)
             {
                 ++WalletsValue;
                 NewWallet(WalletsValue, entryName.Text);
@@ -111,18 +118,46 @@ namespace myWalletXAML
         async void OnDelete(object sender, EventArgs e)
         {
             var item = (Button)sender;
-            int tempID = 0;
+            int tempItems = 0;
             string answer;
-            int.TryParse(item.CommandParameter.ToString(), out tempID);
+            
             answer = await DisplayActionSheet("Are you sure you want to delete?", null, null, "Yes", "No");
             if (answer == "Yes")
             {
                 //await DisplayAlert("Test", $"Wallet {tempID}", "OK");
-                WalletsItems.RemoveAt(tempID-1);
-                App.Current.Properties.Remove($"Wallet {tempID-1}");
-                --WalletsValue;
-                App.Current.Properties["Number of wallets"] = WalletsValue;
-                await App.Current.SavePropertiesAsync();
+                for(int i = 0; i < WalletsItems.Count; i++)
+                {
+                    if(WalletsItems[i].Name == item.CommandParameter.ToString())
+                    {
+                        WalletsItems.RemoveAt(i);
+                        App.Current.Properties.Remove($"Wallet {i+1}");
+                        if(App.Current.Properties.ContainsKey($"Wallet {i + 1} Number of items"))
+                        {
+                            int.TryParse(App.Current.Properties[$"Wallet {i + 1} Number of items"].ToString(), out tempItems);
+                            for (int j = 1; j <= tempItems; j++)
+                            {
+                                if (App.Current.Properties.ContainsKey($"Wallet {i + 1} {j} Name"))
+                                {
+                                    App.Current.Properties.Remove($"Wallet {i + 1} {j} Name");
+                                    App.Current.Properties.Remove($"Wallet {i + 1} {j} Value");
+                                    App.Current.Properties.Remove($"Wallet {i + 1} {j} Type");
+                                    break;
+                                }
+
+                            }
+                        }
+                        --WalletsValue;
+                        App.Current.Properties["Number of wallets"] = WalletsValue;
+                        await App.Current.SavePropertiesAsync();
+                        break;
+                    }
+                    
+                }
+                //WalletsItems.RemoveAt(tempID-1);
+                //App.Current.Properties.Remove($"Wallet {tempID}");
+                //--WalletsValue;
+                //App.Current.Properties["Number of wallets"] = WalletsValue;
+                //await App.Current.SavePropertiesAsync();
             }
         }
     }
